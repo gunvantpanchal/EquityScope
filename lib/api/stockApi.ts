@@ -93,11 +93,11 @@ export async function searchStocks(
     // For now, return mock data
     // In production, implement actual search API
     const mockResults: StockSearchResult[] = [
-      { symbol: 'RELIANCE', name: 'Reliance Industries Ltd', exchange: 'NSE' },
-      { symbol: 'TCS', name: 'Tata Consultancy Services Ltd', exchange: 'NSE' },
-      { symbol: 'INFY', name: 'Infosys Ltd', exchange: 'NSE' },
-      { symbol: 'HDFCBANK', name: 'HDFC Bank Ltd', exchange: 'NSE' },
-      { symbol: 'ICICIBANK', name: 'ICICI Bank Ltd', exchange: 'NSE' },
+      { symbol: 'RELIANCE', name: 'Reliance Industries Ltd', exchange: 'NSE' as const },
+      { symbol: 'TCS', name: 'Tata Consultancy Services Ltd', exchange: 'NSE' as const },
+      { symbol: 'INFY', name: 'Infosys Ltd', exchange: 'NSE' as const },
+      { symbol: 'HDFCBANK', name: 'HDFC Bank Ltd', exchange: 'NSE' as const },
+      { symbol: 'ICICIBANK', name: 'ICICI Bank Ltd', exchange: 'NSE' as const },
     ].filter(
       (stock) =>
         stock.symbol.toLowerCase().includes(query.toLowerCase()) ||

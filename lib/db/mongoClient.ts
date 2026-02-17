@@ -1,16 +1,16 @@
 import { MongoClient } from 'mongodb'
 
-if (!process.env.MONGODB_URI) {
-  throw new Error('Please add your MONGODB_URI to .env')
-}
-
-const uri = process.env.MONGODB_URI
+const uri = process.env.MONGODB_URI || ''
 const options = {}
 
 let client: MongoClient
 let clientPromise: Promise<MongoClient>
 
-if (process.env.NODE_ENV === 'development') {
+if (!uri) {
+  console.warn('Warning: MONGODB_URI is not defined')
+  // Create a dummy promise that will throw at runtime if used
+  clientPromise = Promise.reject(new Error('MONGODB_URI is not defined'))
+} else if (process.env.NODE_ENV === 'development') {
   let globalWithMongo = global as typeof globalThis & {
     _mongoClientPromise?: Promise<MongoClient>
   }

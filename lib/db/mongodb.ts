@@ -1,10 +1,6 @@
 import mongoose from 'mongoose'
 
-if (!process.env.MONGODB_URI) {
-  throw new Error('Please add your MONGODB_URI to .env')
-}
-
-const MONGODB_URI: string = process.env.MONGODB_URI
+const MONGODB_URI: string = process.env.MONGODB_URI || ''
 
 interface MongooseCache {
   conn: typeof mongoose | null
@@ -22,6 +18,10 @@ if (!global.mongoose) {
 }
 
 async function dbConnect(): Promise<typeof mongoose> {
+  if (!MONGODB_URI) {
+    throw new Error('Please add your MONGODB_URI to .env')
+  }
+
   if (cached.conn) {
     return cached.conn
   }
