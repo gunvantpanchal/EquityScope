@@ -1,0 +1,50 @@
+{
+  "name": "equityscope",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "next": "^16.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.3.3",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.0",
+    "next-auth": "^5.0.0-beta.25",
+    "bcryptjs": "^2.4.3",
+    "@tanstack/react-query": "^5.17.19",
+    "zustand": "^4.5.0",
+    "axios": "^1.6.5",
+    "recharts": "^2.10.3",
+    "zod": "^3.22.4",
+    "tailwindcss": "^3.4.1",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-slider": "^1.1.2",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@radix-ui/react-label": "^2.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.0",
+    "lucide-react": "^0.468.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/bcryptjs": "^2.4.6",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^16.1.6",
+    "prettier": "^3.2.4",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33"
+  }
+}
